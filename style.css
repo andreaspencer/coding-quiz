@@ -1,0 +1,139 @@
+nav {
+    margin: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    height:auto;
+    padding: 20px;
+}
+
+li {
+    flex: 1 0 50%;
+    font-size: 16px;
+}
+
+section {
+    justify-content: center;
+    text-align: center;
+}
+
+.intro h1 {
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+section p {
+    width: 100%;
+    font-size: 16px;
+    margin: 10px auto;
+}
+
+button {
+    padding: 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 40%;
+    height: 50%;
+    margin: 10px;
+    padding: 0px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #953553;
+    border-color: #bf95d4;
+}
+
+h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.high-score {
+    text-align: start;
+}
+
+.timer {
+    text-align: end;
+}
+
+.into {
+    display: block;
+}
+
+.quiz {
+    display: none;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.startButton {
+    text-align:center;
+}
+
+.sectionEl {
+	display: block;
+}
+
+.h1El {
+	margin: 0 auto;
+	font-size: 2.5rem;
+	text-align: center;
+}
+.h2El {
+	margin: 1rem 0;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.labelEl {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.inputEl {
+	padding: .6rem;
+}
+
+.sectionEl .buttonEl {
+	padding: 0;
+	font-size: 1.7rem;
+	width: 5rem;
+	height: 3rem;
+	text-align: center;
+	margin-left: 1rem;
+}
+
+.sectionEl .buttonEl {
+	padding: 0;
+	font-size: 1.7rem;
+	width: 5rem;
+	height: 3rem;
+	text-align: center;
+	margin-left: 1rem;
+}
+
+.wrong {
+	width: 20rem;
+	margin: 1rem auto;
+	font-size: 2.2rem;
+	color: crimson;
+}
+
+.linkBack {
+	font-size: 3rem;
+	text-decoration: none;
+}
+
+.highScore {
+	color: crimson;
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+
+.nameScore {
+	font-size: 2rem;
+}
