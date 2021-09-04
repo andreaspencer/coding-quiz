@@ -66,8 +66,7 @@ function startTimer(){
         if (secondsLeft === 0) {
             userScore= 0;
             clearInterval(timeInterval);
-            timerEl.textContent= "";
-            alert("Times Up!");
+            timerEl.textContent= "Times Up!";
             userScore = 0;
             enterHiSc();
         }
@@ -103,10 +102,9 @@ quizEl.addEventListener("click", function () {
                 questionIndex ++;
                 loadQuestion();
             } else {
-                alert("All Done!");
                 userScore = secondsleft;
                 clearInterval(timeInterval);
-                timerEl.textContent = " ";
+                timerEl.textContent = "All Done";
                 enterHiSc();
             }
         }else {
@@ -115,57 +113,30 @@ quizEl.addEventListener("click", function () {
             if (secondsLeft <= 0) {
                 userScore = 0;
                 clearInterval(timeInterval);
-                timerEl.textContent = " ";
-                alert("You ran out of time!");
+                timerEl.textContent = "You ran out of time!";
                 enterHiSc();
             }
         }
     }
 });
 
-var mainEl = document.querySelector('main');
-var sectionEl = document.createElement("section");
-var h1El = document.createElement("h1");
-var h2El = document.createElement("h2");
-var labelEl = document.createElement("label");
-var inputEl = document.createElement("input");
-var buttonEl = document.createElement("button");
-
 function enterHiSc() {
-	quizEl.setAttribute("style", "display: none");
+    var intials = intialsEl.value.trim();
+    if (intials !== '') {
+        var highScore= JSON.parse(window.localStorage.getItem("highscores")) || [];
+        var newScore = {
+            score: secondsLeft,
+            intials: intials
+        };
 
-	mainEl.appendChild(sectionEl);
-	sectionEl.appendChild(h1El);
-	sectionEl.appendChild(h2El);
-	sectionEl.appendChild(labelEl);
-	sectionEl.appendChild(inputEl);
-	sectionEl.appendChild(buttonEl);
-
-	sectionEl.setAttribute("class", "sectionEl");
-	h1El.setAttribute("class", "h1El");
-	h2El.setAttribute("class", "h2El");
-	labelEl.setAttribute("class", "labelEl");
-	inputEl.setAttribute("class", "inputEl");
-	inputEl.setAttribute("placeholder", "...");
-	buttonEl.setAttribute("class", "buttonEl");
-
-	h1El.textContent = "Thanks for playing!";
-	h2El.textContent = "Your score is " + userScore;
-	labelEl.textContent = "Please enter your initials: ";
-	buttonEl.textContent = "Post";
-
-	//Save values to array
-	buttonEl.addEventListener("click", function (event) {
-		event.preventDefault();
-		var highScore =JSON.parse(localStorage.getItem("highScores")) || [];
-
-		var highScores = {
-			name: inputEl.value.trim(),
-			score: userScore
-		};
-
-		highScore.push(highScores);
-
-		localStorage.setItem("highScores", JSON.stringify(highScore));
-	});
+        highScore.push(newScore);
+        window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    }
 };
+
+function checkForEnter() {
+    if (event.key === "Enter") {
+        saveHighScore();
+    }
+}
+
