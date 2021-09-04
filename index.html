@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Web API - Coding Quiz</title>
+</head>
+<body>
+    <header>
+        <!-- highscore viewing button-->
+        <div>
+            <button class="btnHighScore" id="view-high-score">View High Scores</button>
+        </div>
+        <!-- time countdown -->
+        <div>
+            <p>Time: <span id="timeLeft">xxx</span></p>
+        </div>
+    </header>
+        <div class= "container">
+            <div id= "questionCon" class="hide">
+                <div id="question">Questions</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+            <div id="choices">
+                <button id="start-btn" class="starts-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next Question</button>
+                <button id="submit-btn" class="submit-btn btn hide">Submit</button>
+            </div>
+        </div>
+        <script src="./assets/js/script.js"></script>
+</body>
+</html>
