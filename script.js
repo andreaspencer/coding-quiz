@@ -130,7 +130,6 @@ function enterHiSc() {
 
 	alert("Thanks for playing!");
 	alert("Your score is " + userScore + ".");
-    prompt("Please enter your initials: ");
 
 	//Save values to array
 	highScore.addEventListener("click", function () {
