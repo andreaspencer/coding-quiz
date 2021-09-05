@@ -13,7 +13,7 @@ This weeks challenge was to create a coding quiz site using JavaScript, HTML, an
 ### Locally Download Instructions
 1. clone github repository from ssh link
 2. open terminal to desired cloning location then type in the following:
-    * git clone https://andreaspencer.github.io/coding-quiz/
+    * git clone git@github.com:andreaspencer/coding-quiz.git
     * cd password-generator
     * code .
         - this last step will open the code in VS studios to view on local machine
