@@ -31,3 +31,4 @@ This weeks challenge was to create a coding quiz site using JavaScript, HTML, an
 ##### Live URL: hhtps://andreaspencer.github.io/coding-quiz/
 
 ##### Website Screenshot
+<img width="999" alt="Screen Shot 2021-09-05 at 12 39 26 PM" src="https://user-images.githubusercontent.com/87836575/132139404-9a277944-d475-43f9-8b08-f4a5f3c5ad27.png">
