@@ -1,5 +1,6 @@
 var startButton = document.querySelector("#startButton");
 var timerEl = document.querySelector("#timer");
+var highScore = document.querySelector("#highscore");
 
 var questionEl= document.querySelector("#question");
 var b1El= document.querySelector("#b1");
@@ -77,6 +78,7 @@ startButton.addEventListener("click", startQuiz);
 function startQuiz() {
     userScore = 0;
     startTimer();
+    introEl.setAttribute("style", "display: none")
     quizEl.setAttribute("style", "display: block");
     loadQuestion();
 };
@@ -102,7 +104,7 @@ quizEl.addEventListener("click", function () {
                 questionIndex ++;
                 loadQuestion();
             } else {
-                userScore = secondsleft;
+                userScore = secondsLeft;
                 clearInterval(timeInterval);
                 timerEl.textContent = "All Done";
                 enterHiSc();
@@ -117,26 +119,31 @@ quizEl.addEventListener("click", function () {
                 enterHiSc();
             }
         }
-    }
+    } 
 });
 
+userScore= secondsLeft;
+
 function enterHiSc() {
-    var intials = intialsEl.value.trim();
-    if (intials !== '') {
-        var highScore= JSON.parse(window.localStorage.getItem("highscores")) || [];
-        var newScore = {
-            score: secondsLeft,
-            intials: intials
-        };
+    introEl.setAttribute("style", "display:block");
+	quizEl.setAttribute("style", "display: none");
 
-        highScore.push(newScore);
-        window.localStorage.setItem("highscores", JSON.stringify(highscores));
-    }
+	alert("Thanks for playing!");
+	alert("Your score is " + userScore + ".");
+    prompt("Please enter your initials: ");
+
+	//Save values to array
+	highScore.addEventListener("click", function () {
+		event.preventDefault();
+		var highScore =JSON.parse(localStorage.getItem("highScores")) || [];
+
+		var highScores = {
+			name: prompt("Please enter your initials: "),
+			score: userScore
+		};
+
+		highScore.push(highScores);
+
+		localStorage.setItem("highScores", JSON.stringify(highScore));
+	});
 };
-
-function checkForEnter() {
-    if (event.key === "Enter") {
-        saveHighScore();
-    }
-}
-
